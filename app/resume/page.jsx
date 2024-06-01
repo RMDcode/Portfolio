@@ -1,15 +1,7 @@
 "use client";
 
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs
-} from 'react-icons/fa';
-
-import { SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+import { FaHtml5, FaCss3, FaAngular, FaReact, FaNodeJs, FaPhp, FaDatabase, FaJava, FaPython, FaJs } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiRedux, SiExpress, SiMongodb, SiPostgresql, SiC, SiCplusplus, SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 
 //about data
 const about = {
@@ -60,37 +52,12 @@ const experince ={
   icon: '/assets/resume/badge.svg',
   title: 'My Experience',
   description:
-  'Over years of experience developing scalable and dynamic web applications using modern JavaScript frameworks and libraries.',
+  'Motivated and adaptable professional transitioning into IT, with foundational skills in web development and programming, eager to leverage my passion for technology in a dynamic and growth-oriented environment.',
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2022 - Present",
-    },
-    {
-      company: "Web Design Studio",
-      position: "Front-end Developer Intern",
-      duration: "Summer 2021",
-    },
-    {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2020 - 2021",
-    },
-    {
-      company: "Tech Academy",
-      position: "Teaching Assistant",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Software Development Fire",
-      position: "Junior Developer",
-      duration: "2017 - 2018",
+      company: "WNS(Ryder)",
+      position: "Senior Associate (Non-IT)",
+      duration: "2021 - Present",
     },
   ],
 
@@ -104,29 +71,19 @@ const education ={
   'Bachelors degree in Computer Science with a strong foundation in software development, algorithms, and data structures.',
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development Bootcamp",
-      duration: "2023",
+      institution: "Savitribai Phule Pune University",
+      degree: "Bachelor of Science: Computer Science",
+      duration: "2017 - 2020",
     },
     {
-      institution: "Codecademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "D. T. Patil Junior college",
+      degree: "HSC (Science)",
+      duration: "2015 - 2017",
     },
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2020 - 2021",
-    },
-    {
-      institution: "Tech Institute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
+      institution: "Swami Vivekanand Vidya Mandir",
+      degree: "SSC",
+      duration: "2014 - 2015",
     },
   ],
 }
@@ -150,6 +107,14 @@ const skills ={
       name: 'javascript',
     },
     {
+      icon: <SiTypescript/>,
+      name: 'typescript',
+    },
+    {
+      icon: <FaAngular/>,
+      name: 'Angular',
+    },
+    {
       icon: <FaReact/>,
       name: 'react.js',
     },
@@ -166,10 +131,33 @@ const skills ={
       name: 'node.js',
     },
     {
-      icon: <FaFigma/>,
-      name: 'figma',
+      icon: <SiExpress/>,
+      name: 'express',
     },
-
+    {
+      icon: <FaPhp/>,
+      name: 'php',
+    },
+    {
+      icon: <SiMongodb/>,
+      name: 'mongodb',
+    },
+    {
+      icon: <SiC/>,
+      name: 'c',
+    },
+    {
+      icon: <SiCplusplus/>,
+      name: 'C++',
+    },
+    {
+      icon: <FaJava/>,
+      name: 'Java',
+    },
+    {
+      icon: <FaPython/>,
+      name: 'python',
+    },
   ]
 }
 
