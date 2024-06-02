@@ -13,7 +13,7 @@ const Header= ()=> {
     { /* Logo */}
       <Link href="/" >
       <h1 className="text-4xl fonts-semibold"> 
-        Rohit <span className="text-accent">.</span>
+        Rohit<span className="text-accent">.</span>
       </h1>
       </Link>
 

@@ -31,11 +31,11 @@ const projects = [
     category: "FullStack",
     title: "project 2",
     description:
-      "Skilled in creating responsive, user-friendly interfaces with a strong command of HTML, CSS, and JavaScript frameworks.",
-    stack:[{name:"Next.js"}, {name:"Tailwind.css"}, {name:"Node.js"}],
-    image:"/assets/work/frame2.jpg",
-    live:"",
-    github:"",
+      "An innovative e-commerce platform designed for book enthusiasts, built with React and Vite for a seamless user experience. Styled with Tailwind CSS, and powered by Express.js and Node.js on the backend, it utilizes MongoDB-Atlas for robust data management and is deployed on Vercel for high performance and scalability.",
+    stack:[{name:"Next.js"}, {name:"Tailwind.css"}, {name:"Vercel"}],
+    image:"/assets/work/Bookstore.png",
+    live:"https://bookstore1-ten.vercel.app/",
+    github:"https://github.com/RMDcode/bookstore1",
   },
   {
     num:"03",

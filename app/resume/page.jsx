@@ -76,7 +76,7 @@ const education ={
       duration: "2017 - 2020",
     },
     {
-      institution: "D. T. Patil Junior college",
+      institution: "D T Patil Junior college",
       degree: "HSC (Science)",
       duration: "2015 - 2017",
     },
