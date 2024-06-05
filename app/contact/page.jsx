@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import{
+import {
   Select,
   SelectContent,
   SelectGroup,
@@ -13,7 +13,14 @@ import{
   SelectValue,
 } from "@/components/ui/select";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt, FaMapMarkerAlt} from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt, FaMapMarkerAlt } from 'react-icons/fa';
+
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { sendContactForm } from "@/lib/api";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 const info = [
   {
@@ -33,53 +40,33 @@ const info = [
   },
 ];
 
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { sendContactForm } from "@/lib/api";
-
-const initValues = {
-  name: "",
-  email: "",
-  subject: "",
-  phone: "",
-  message: "",
-};
-
-const initState = { values: initValues, isLoading: false };
+const schema = yup.object().shape({
+  name: yup.string().required("Full name is required"),
+  email: yup.string().email("Invalid email address").required("Email is required"),
+  subject: yup.string().required("Subject is required"),
+  phone: yup.string().required("Phone number is required"),
+  message: yup.string().required("Message is required"),
+});
 
 const Contact = () => {
-  const [state, setState] = useState(initState);
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const { values, isLoading } = state;
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = ({ target }) =>
-    setState((prev) => ({
-      ...prev,
-      values: {
-        ...prev.values,
-        [target.name]: target.value,
-      },
-    }));
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    try {
+      await sendContactForm(data);
+      alert('Email sent successfully!');
+      reset();
+    } catch (error) {
+      alert('Failed to send email. Please try again later.');
+    }
+    setIsLoading(false);
+  };
 
-    const onSubmit = async (e) => {
-      e.preventDefault();
-      setState((prev) => ({
-        ...prev,
-        isLoading: true,
-      }));
-      try {
-        await sendContactForm(values);
-        alert('Email sent successfully!');
-      } catch (error) {
-        alert('Failed to send email. Please try again later.');
-      }
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        values: initValues, // Reset form after submission
-      }));
-    };
-    
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -95,7 +82,7 @@ const Contact = () => {
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-              onSubmit={onSubmit}
+              onSubmit={handleSubmit(onSubmit)}
             >
               <h3 className="text-4xl text-accent"> Let&apos;s work together </h3>
               <p className="text-white/60">
@@ -106,41 +93,36 @@ const Contact = () => {
                 <Input
                   type="text"
                   placeholder="Full name"
-                  name="name"
-                  value={values.name}
-                  onChange={handleChange}
+                  {...register("name")}
                 />
+                {errors.name && <p className="text-red-500">{errors.name.message}</p>}
                 <Input
                   type="text"
                   placeholder="Subject"
-                  name="subject"
-                  value={values.subject}
-                  onChange={handleChange}
+                  {...register("subject")}
                 />
+                {errors.subject && <p className="text-red-500">{errors.subject.message}</p>}
                 <Input
                   type="email"
                   placeholder="Email ID"
-                  name="email"
-                  value={values.email}
-                  onChange={handleChange}
+                  {...register("email")}
                 />
+                {errors.email && <p className="text-red-500">{errors.email.message}</p>}
                 <Input
                   type="phone"
                   placeholder="Phone Number"
-                  name="phone"
-                  value={values.phone}
-                  onChange={handleChange}
+                  {...register("phone")}
                 />
+                {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
               </div>
 
               {/* Textarea */}
               <Textarea
                 className="h-[200px]"
                 placeholder="Type your message here."
-                name="message"
-                value={values.message}
-                onChange={handleChange}
+                {...register("message")}
               />
+              {errors.message && <p className="text-red-500">{errors.message.message}</p>}
               {/* btn */}
               <Button
                 size="md"
