@@ -39,14 +39,14 @@ const projects = [
   },
   {
     num:"03",
-    category: "Frontend",
+    category: "FullStack",
     title: "project 3",
     description:
-      "Skilled in creating responsive, user-friendly interfaces with a strong command of HTML, CSS, and JavaScript frameworks.",
-    stack:[{name:"Next.js"}, {name:"Tailwind.css"}],
-    image:"/assets/work/frame3.jpg",
-    live:"",
-    github:"",
+      "Empowering global learners with a diverse range of free courses, all accessible on our Angular-powered platform.",
+    stack:[{name:"Angular"}, {name:"Express.js"},{name:"Tailwind.css"},  {name:"Node.js"}, {name:"Vercel"}, {name:"MongoDb"}],
+    image:"/assets/work/Eventhub1.png",
+    live:"https://event-hub-eta-rust.vercel.app/events",
+    github:"https://github.com/RMDcode/EventHub.git",
   },
 ];
 
