@@ -32,7 +32,7 @@ const projects = [
     title: "project 2",
     description:
       "An innovative e-commerce platform designed for book enthusiasts, built with React and Vite for a seamless user experience. Styled with Tailwind CSS, and powered by Express.js and Node.js on the backend, it utilizes MongoDB-Atlas for robust data management and is deployed on Vercel for high performance and scalability.",
-    stack:[{name:"react.js"}, {name:"Tailwind.css"}, {name:"Express.js"}, {name:"Vercel"}],
+    stack:[{name:"react.js"}, {name:"Tailwind.css"}, {name:"Express.js"}],
     image:"/assets/work/Bookstore.png",
     live:"https://bookstore1-ten.vercel.app/",
     github:"https://github.com/RMDcode/bookstore1",
@@ -43,7 +43,7 @@ const projects = [
     title: "project 3",
     description:
       "Empowering global learners with a diverse range of free courses, all accessible on our Angular-powered platform.",
-    stack:[{name:"Angular"}, {name:"Tailwind.css"}, {name:"Express.js"}, {name:"MongoDb"}],
+    stack:[{name:"Angular"}, {name:"Express.js"}, {name:"MongoDb"}],
     image:"/assets/work/Eventhub1.png",
     live:"https://event-hub-eta-rust.vercel.app/events",
     github:"https://github.com/RMDcode/EventHub.git",
