@@ -310,6 +310,7 @@ const Resume = () => {
             <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
             {about.description}
             </p>
+            <ScrollArea className='h-[400px]'>
             <ul 
             className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]
             mx-auto xl:mx-0'>
@@ -321,6 +322,7 @@ const Resume = () => {
                 </li>
               })}
             </ul>
+            </ScrollArea>
           </div>
         </TabsContent>
       </div>
