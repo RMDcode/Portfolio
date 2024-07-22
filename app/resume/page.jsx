@@ -55,8 +55,8 @@ const experince ={
   'Motivated and adaptable professional transitioning into IT, with foundational skills in web development and programming, eager to leverage my passion for technology in a dynamic and growth-oriented environment.',
   items: [
     {
-      company: "WNS(Ryder)",
-      position: "Senior Associate (Non-IT)",
+      company: "WNS",
+      position: "Associate",
       duration: "2021 - Present",
     },
   ],
